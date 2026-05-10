@@ -3,85 +3,129 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Fieldwork — SOP templates and operations tools for agencies and service businesses. Built by operators, not theorists.">
 <title>Fieldwork — Tools for People Who Run Things</title>
 <style>
-  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 700px; margin: 0 auto; padding: 40px 24px 80px; background: #0f1117; color: #c8ccd4; line-height: 1.7; font-size: 16px; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 700px; margin: 0 auto; padding: 32px 24px 80px; background: #0f1117; color: #c8ccd4; line-height: 1.7; font-size: 16px; }
   a { color: #1dd1a1; text-decoration: none; }
   a:hover { text-decoration: underline; }
-  h1 { font-size: 28px; color: #f3f4f6; margin: 0 0 8px 0; }
-  h2 { font-size: 18px; color: #6b7280; font-weight: 400; margin: 0 0 40px 0; }
+  .nav { margin-bottom: 48px; display: flex; justify-content: space-between; align-items: baseline; }
+  .nav .brand { font-size: 18px; font-weight: 700; color: #f3f4f6; }
+  .nav .brand span { color: #1dd1a1; }
+  .nav .links a { color: #6b7280; margin-left: 20px; font-size: 14px; }
+  .hero-img { width: 100%; height: 280px; object-fit: cover; border-radius: 8px; margin-bottom: 8px; opacity: 0.85; }
+  .img-credit { font-size: 11px; color: #4a4d57; margin-bottom: 36px; }
+  .img-credit a { color: #4a4d57; }
+  h1 { font-size: 28px; color: #f3f4f6; line-height: 1.2; margin: 0 0 10px 0; letter-spacing: -0.01em; }
+  .subtitle { font-size: 17px; color: #6b7280; font-weight: 400; margin: 0 0 48px 0; line-height: 1.5; }
+  h2 { font-size: 20px; color: #f3f4f6; margin: 48px 0 16px 0; }
   h3 { font-size: 16px; color: #f3f4f6; margin: 0 0 6px 0; }
-  .nav { margin-bottom: 50px; }
-  .nav a { color: #6b7280; margin-right: 20px; font-size: 14px; }
-  .nav a.active { color: #1dd1a1; }
-  .hero-img { width: 100%; height: 280px; object-fit: cover; border-radius: 8px; margin-bottom: 40px; opacity: 0.85; }
-  .product { padding: 16px 0; border-bottom: 1px solid #2a2d37; }
-  .product:last-child { border-bottom: none; }
-  .product h3 a { color: #f3f4f6; }
-  .product p { font-size: 14px; color: #6b7280; margin: 4px 0; }
-  .product .price { font-size: 13px; color: #1dd1a1; font-weight: 600; }
-  .section { margin: 50px 0 24px 0; color: #6b7280; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
-  .post { padding: 10px 0; }
-  .post a { color: #f3f4f6; font-size: 15px; }
-  .post .label { font-size: 12px; color: #6b7280; }
-  .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid #2a2d37; font-size: 13px; color: #6b7280; }
+  .pain-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 48px; }
+  .pain-item { background: #1a1d27; border: 1px solid #2a2d37; border-radius: 6px; padding: 14px 16px; font-size: 14px; color: #9ca3af; }
+  .pain-item strong { color: #f3f4f6; }
+  .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 48px; }
+  .feature-item { background: #1a1d27; border: 1px solid #2a2d37; border-radius: 6px; padding: 14px 16px; font-size: 14px; }
+  .feature-item .icon { font-size: 18px; margin-bottom: 6px; }
+  .feature-item strong { color: #f3f4f6; display: block; margin-bottom: 4px; }
+  .feature-item span { color: #9ca3af; }
+  .hero-card { background: linear-gradient(135deg, #1a1d27 0%, #1f2a2a 100%); border: 1px solid #1dd1a1; border-radius: 10px; padding: 28px; margin-bottom: 48px; }
+  .hero-card h2 { margin-top: 0; }
+  .hero-card .price { font-size: 28px; font-weight: 800; color: #1dd1a1; margin: 16px 0 12px 0; }
+  .hero-card .btn { display: inline-block; background: #1dd1a1; color: #0f1117; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 16px; }
+  .hero-card .btn:hover { opacity: 0.9; text-decoration: none; }
+  .hero-card ul { margin: 12px 0 0 0; padding: 0; list-style: none; }
+  .hero-card li { padding: 4px 0; font-size: 14px; color: #9ca3af; }
+  .hero-card li::before { content: "· "; color: #1dd1a1; font-weight: 700; }
+  .product { background: #1a1d27; border: 1px solid #2a2d37; border-radius: 8px; padding: 20px; margin-bottom: 12px; }
+  .product h3 a { color: #f3f4f6; font-size: 16px; }
+  .product p { font-size: 14px; color: #9ca3af; margin: 6px 0; }
+  .product .price { font-size: 14px; color: #1dd1a1; font-weight: 700; }
+  .start-free { background: #1a2a24; border: 1px solid #1dd1a1; border-radius: 8px; padding: 24px; margin: 48px 0; text-align: center; }
+  .start-free h3 { font-size: 18px; color: #f3f4f6; margin-bottom: 8px; }
+  .start-free p { font-size: 14px; color: #9ca3af; margin-bottom: 16px; }
+  .start-free .btn { display: inline-block; background: #1dd1a1; color: #0f1117; padding: 10px 22px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 15px; }
+  .footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid #2a2d37; font-size: 13px; color: #6b7280; }
+  .footer a { color: #6b7280; }
+  @media (max-width: 560px) { .pain-grid, .feature-grid { grid-template-columns: 1fr; } .hero-card { padding: 20px; } }
 </style>
 </head>
 <body>
 
 <div class="nav">
-  <a href="/fieldwork/" class="active">Fieldwork</a>
-  <a href="/fieldwork/blog/">Writing</a>
+  <div class="brand">Field<span>work</span></div>
+  <div class="links">
+    <a href="/fieldwork/blog/">Writing</a>
+    <a href="https://designwave831.gumroad.com">Store</a>
+  </div>
 </div>
 
-<img class="hero-img" src="https://images.unsplash.com/photo-1758876201723-9f050343325c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDc1NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3Nzg0MjMzMzZ8&ixlib=rb-4.1.0&q=80&w=1200" alt="">
+<img class="hero-img" src="https://images.unsplash.com/photo-1758876201723-9f050343325c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDc1NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3Nzg0MjMzMzZ8&ixlib=rb-4.1.0&q=80&w=1200" alt="Professional planning workspace">
+<div class="img-credit">Photo by <a href="https://unsplash.com/@airfocus">airfocus</a> on <a href="https://unsplash.com">Unsplash</a></div>
 
-<div style="font-size:12px;color:#4a4d57;margin-top:-32px;margin-bottom:40px">Photo by <a href="https://unsplash.com/@airfocus">airfocus</a> on <a href="https://unsplash.com">Unsplash</a></div>
 <h1>Tools for people who run things.</h1>
-<h2>Templates, checklists, and systems built from real operations experience. No theory. No fluff.</h2>
+<p class="subtitle">SOP templates and operations systems built from real experience. No theory. No fluff. Just the stuff we use every day to keep client work from slipping through the cracks.</p>
 
-<div class="section">Products</div>
-
-<div class="product">
-  <h3><a href="https://designwave831.gumroad.com/l/agency-sop-pack">Agency Operations SOP Pack</a></h3>
-  <p>7 templates for creative agencies. Creative briefs, revision tracking, retainer management, resource allocation, client escalation, weekly reviews.</p>
-  <div class="price">$29</div>
+<!-- Who This Is For -->
+<h2>Who this is for</h2>
+<div class="pain-grid">
+  <div class="pain-item"><strong>Client onboarding</strong> changes depending on who remembers what that week</div>
+  <div class="pain-item"><strong>Revision requests</strong> get lost in Slack, email, or someone's memory</div>
+  <div class="pain-item"><strong>Retainers</strong> are managed reactively instead of systematically</div>
+  <div class="pain-item"><strong>Escalations</strong> happen too late because nobody knew whose job it was</div>
+  <div class="pain-item"><strong>Weekly reviews</strong> feel like status theater instead of actual control</div>
+  <div class="pain-item"><strong>Processes</strong> live in people's heads, so when someone leaves, the process leaves with them</div>
 </div>
+
+<!-- What Every Template Includes -->
+<h2>What every template includes</h2>
+<div class="feature-grid">
+  <div class="feature-item"><div class="icon">🏷️</div><strong>Owner fields</strong><span>Every step has a name next to it. Work does not disappear.</span></div>
+  <div class="feature-item"><div class="icon">🪜</div><strong>Escalation paths</strong><span>Three levels of named contacts and time thresholds for when something breaks.</span></div>
+  <div class="feature-item"><div class="icon">🔁</div><strong>Review triggers</strong><span>Scheduled checkpoints so the document does not become stale. 30 days, then quarterly.</span></div>
+  <div class="feature-item"><div class="icon">📋</div><strong>Filled examples</strong><span>Real templates filled with real data so you are not starting from a blank page.</span></div>
+</div>
+
+<!-- Flagship Offer -->
+<div class="hero-card">
+  <h2>Agency Operations SOP Pack</h2>
+  <p style="color:#9ca3af;font-size:15px">7 agency-ready SOP templates for keeping client work from slipping through the cracks.</p>
+  <div class="price">$29</div>
+  <a class="btn" href="https://designwave831.gumroad.com/l/agency-sop-pack">Get the Agency Pack →</a>
+  <ul>
+    <li>Creative Brief Intake — standardize what your team receives before work begins</li>
+    <li>Revision &amp; Scope Tracker — stop losing money to unbilled revision rounds</li>
+    <li>Retainer &amp; Budget Tracker — monthly burn visible to the whole team</li>
+    <li>Client Onboarding SOP — four-phase agency onboarding with ownership at every step</li>
+    <li>Issue Resolution &amp; Client Escalation — severity levels and named contacts</li>
+    <li>Agency Daily Standup &amp; Queue — who is doing what, what is blocked</li>
+    <li>Weekly Agency Review &amp; Handoff — what shipped, resource allocation, process health score</li>
+  </ul>
+</div>
+
+<!-- Start Free -->
+<div class="start-free">
+  <h3>Start free. Upgrade when you are ready.</h3>
+  <p>Use the Daily Operations Checklist for a week. If it helps your team, the full SOP system is waiting.</p>
+  <a class="btn" href="https://designwave831.gumroad.com/l/daily-ops-checklist">Download Free Checklist →</a>
+</div>
+
+<!-- Secondary Products -->
+<h2>Also available</h2>
 
 <div class="product">
   <h3><a href="https://designwave831.gumroad.com/l/sop-template-pack">SOP Template Pack</a></h3>
-  <p>6 fillable templates + 2 bonuses. Daily ops, client onboarding, vendor management, issue resolution, weekly reviews, process improvement. Markdown + guides for Notion, Google Docs, PDF.</p>
+  <p>6 fillable templates + 2 bonuses for general business operations. Daily ops, client onboarding, vendor management, issue resolution, weekly reviews, and process improvement. Markdown + import guides for Notion, Google Docs, and PDF.</p>
   <div class="price">$24</div>
 </div>
 
 <div class="product">
   <h3><a href="https://designwave831.gumroad.com/l/gumroad-toolkit">Gumroad Launch Toolkit</a></h3>
-  <p>Listing templates, API integration guide (presign upload pipeline documented), cover image specs, tag optimization, pre-publish checklist.</p>
+  <p>Listing templates, API integration guide (presign upload pipeline documented), cover image specs, tag optimization, and a pre-publish checklist.</p>
   <div class="price">$9</div>
 </div>
 
-<div class="product">
-  <h3><a href="https://designwave831.gumroad.com/l/daily-ops-checklist">Daily Operations Checklist</a></h3>
-  <p>Morning and evening routines. Filled example from a real design studio. No email required. Actually free.</p>
-  <div class="price">Free</div>
-</div>
-
-<div class="section">Recent Writing</div>
-
-<div class="post">
-  <a href="/fieldwork/blog/the-best-free-sop-templates-in-2026-that-are-actually-useful">The best free SOP templates in 2026 (that are actually useful)</a>
-  <span class="label">— Buyer's Guide</span>
-</div>
-<div class="post">
-  <a href="/fieldwork/blog/i-automated-my-entire-workday-and-nobody-noticed-for-3-months">I automated my workday and nobody noticed for 3 months</a>
-  <span class="label">— Story</span>
-</div>
-<div class="post">
-  <a href="/fieldwork/blog/the-3-worst-client-onboarding-disasters-i-have-ever-witnessed">Three client onboarding disasters I've witnessed</a>
-  <span class="label">— Story</span>
-</div>
-<div class="post">
-  <a href="/fieldwork/blog/">All 9 articles →</a>
+<div style="margin-top:48px;text-align:center;font-size:14px;color:#6b7280">
+  <a href="/fieldwork/blog/">Read the blog</a> for more on agency operations, process documentation, and automation.
 </div>
 
 <div class="footer">
