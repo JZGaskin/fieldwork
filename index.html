@@ -3,116 +3,89 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Fieldwork — tools for people who run things. Built by operators, not theorists.">
 <title>Fieldwork — Tools for People Who Run Things</title>
 <style>
-  :root { --bg: #0f1117; --card: #1a1d27; --border: #2a2d37; --teal: #1dd1a1; --warm: #f0a060; --text: #c8ccd4; --muted: #6b7280; --white: #f3f4f6; }
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 16px; }
-  a { color: var(--teal); text-decoration: none; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 700px; margin: 0 auto; padding: 40px 24px 80px; background: #0f1117; color: #c8ccd4; line-height: 1.7; font-size: 16px; }
+  a { color: #1dd1a1; text-decoration: none; }
   a:hover { text-decoration: underline; }
-
-  /* ── Header ── */
-  .nav { max-width: 780px; margin: 0 auto; padding: 28px 24px 0; display: flex; justify-content: space-between; align-items: center; }
-  .brand { font-size: 20px; font-weight: 700; color: var(--white); display: flex; align-items: center; gap: 10px; }
-  .brand span { color: var(--teal); }
-  .brand-avatar { width: 32px; height: 32px; border-radius: 6px; background: linear-gradient(135deg, var(--teal), #0d9488); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; color: #0a0f1a; }
-  .nav-links { display: flex; gap: 20px; }
-  .nav-links a { color: var(--muted); font-size: 14px; font-weight: 500; }
-  .nav-links a.active { color: var(--teal); }
-
-  /* ── Hero ── */
-  .hero { max-width: 780px; margin: 0 auto; padding: 64px 24px 48px; }
-  .hero h1 { font-size: 36px; font-weight: 700; color: var(--white); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 14px; }
-  .hero .accent { color: var(--teal); }
-  .hero p { font-size: 17px; color: var(--muted); max-width: 520px; line-height: 1.65; }
-  .hero .byline { margin-top: 20px; font-size: 14px; color: var(--muted); display: flex; align-items: center; gap: 8px; }
-  .hero .byline strong { color: var(--white); font-weight: 600; }
-
-  /* ── Products ── */
-  .content { max-width: 780px; margin: 0 auto; padding: 0 24px 80px; }
-  .section-label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 16px; }
-  .products { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; margin-bottom: 56px; }
-  .product-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 22px; transition: border-color 0.15s; }
-  .product-card:hover { border-color: var(--teal); }
-  .product-card h3 { font-size: 15px; font-weight: 600; color: var(--white); margin-bottom: 6px; line-height: 1.35; }
-  .product-card h3 a { color: var(--white); }
-  .product-card p { font-size: 13px; color: var(--muted); line-height: 1.5; margin-bottom: 10px; }
-  .product-card .price { font-size: 13px; font-weight: 700; color: var(--teal); }
-
-  /* ── Blog ── */
-  .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
-  .blog-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 18px; transition: border-color 0.15s; display: flex; flex-direction: column; }
-  .blog-card:hover { border-color: var(--teal); }
-  .blog-card a { color: var(--white); font-size: 14px; font-weight: 600; line-height: 1.35; display: block; flex: 1; }
-  .blog-card .label { font-size: 11px; color: var(--muted); margin-top: 8px; text-transform: uppercase; letter-spacing: 0.05em; }
-
-  /* ── Footer ── */
-  .footer { max-width: 780px; margin: 0 auto; padding: 36px 24px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); }
-  .footer a { color: var(--muted); }
-
-  /* ── SVG ornament ── */
-  .ornament { max-width: 780px; margin: 0 auto; padding: 0 24px 16px; }
-  .ornament svg { display: block; }
-
-  @media (max-width: 560px) { .hero h1 { font-size: 26px; } .nav { flex-direction: column; align-items: flex-start; gap: 10px; } }
+  h1 { font-size: 28px; color: #f3f4f6; margin: 0 0 8px 0; }
+  h2 { font-size: 18px; color: #6b7280; font-weight: 400; margin: 0 0 40px 0; }
+  h3 { font-size: 16px; color: #f3f4f6; margin: 0 0 6px 0; }
+  .nav { margin-bottom: 50px; }
+  .nav a { color: #6b7280; margin-right: 20px; font-size: 14px; }
+  .nav a.active { color: #1dd1a1; }
+  .product { padding: 16px 0; border-bottom: 1px solid #2a2d37; }
+  .product:last-child { border-bottom: none; }
+  .product h3 a { color: #f3f4f6; }
+  .product p { font-size: 14px; color: #6b7280; margin: 4px 0; }
+  .product .price { font-size: 13px; color: #1dd1a1; font-weight: 600; }
+  .section { margin: 50px 0 24px 0; color: #6b7280; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+  .post { padding: 12px 0; }
+  .post a { color: #f3f4f6; font-size: 15px; }
+  .post .label { font-size: 12px; color: #6b7280; }
+  .footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid #2a2d37; font-size: 13px; color: #6b7280; }
 </style>
 </head>
 <body>
 
-<nav class="nav">
-  <div class="brand"><div class="brand-avatar">FW</div> Field<span>work</span></div>
-  <div class="nav-links">
-    <a href="/fieldwork/" class="active">Home</a>
-    <a href="/fieldwork/blog/">Writing</a>
-  </div>
-</nav>
-
-<section class="hero">
-  <h1>We build <span class="accent">tools for people who run things</span>.</h1>
-  <p>Templates, checklists, and systems built from real operations experience. No theory. No fluff. Just the stuff we use every day.</p>
-  <div class="byline">
-    <strong>Fieldwork</strong> · 4 products · 9 articles · built in public
-  </div>
-</section>
-
-<div class="content">
-  <div class="section-label">What we make</div>
-  <div class="products">
-    <div class="product-card">
-      <h3><a href="https://designwave831.gumroad.com/l/agency-sop-pack">Agency SOP Pack</a></h3>
-      <p>Creative briefs, revision tracking, retainer management, resource allocation — for agencies that are tired of scope creep.</p>
-      <div class="price">$29</div>
-    </div>
-    <div class="product-card">
-      <h3><a href="https://designwave831.gumroad.com/l/sop-template-pack">SOP Template Pack</a></h3>
-      <p>6 templates + 2 bonuses. Daily ops, onboarding, vendor mgmt, escalations, reviews. Comes in Markdown + guides for Notion & Google Docs.</p>
-      <div class="price">$24</div>
-    </div>
-    <div class="product-card">
-      <h3><a href="https://designwave831.gumroad.com/l/gumroad-toolkit">Gumroad Launch Toolkit</a></h3>
-      <p>Listing templates, API guide (presign pipeline documented), cover specs, tag optimization. Launch faster.</p>
-      <div class="price">$9</div>
-    </div>
-    <div class="product-card">
-      <h3><a href="https://designwave831.gumroad.com/l/daily-ops-checklist">Daily Ops Checklist</a></h3>
-      <p>Morning & evening routines. Filled example from a real studio. No email, no catch, actually free.</p>
-      <div class="price">Free</div>
-    </div>
-  </div>
-
-  <div class="section-label">What we write about</div>
-  <div class="blog-grid">
-    <div class="blog-card"><a href="/fieldwork/blog/">📝 All 9 articles →</a><div class="label">Updated today</div></div>
-    <div class="blog-card"><a href="/fieldwork/blog/the-best-free-sop-templates-in-2026-that-are-actually-useful">The best free SOP templates in 2026 (that are actually useful)</a><div class="label">Buyer's Guide</div></div>
-    <div class="blog-card"><a href="/fieldwork/blog/the-3-worst-client-onboarding-disasters-i-have-ever-witnessed">Three client onboarding disasters I've witnessed</a><div class="label">Story</div></div>
-    <div class="blog-card"><a href="/fieldwork/blog/i-automated-my-entire-workday-and-nobody-noticed-for-3-months">I automated my workday and nobody noticed for 3 months</a><div class="label">Automation</div></div>
-  </div>
+<div class="nav">
+  <a href="/fieldwork/" class="active">Fieldwork</a>
+  <a href="/fieldwork/blog/">Writing</a>
 </div>
 
-<footer class="footer">
-  <div>Fieldwork · Built by operators, not theorists</div>
-  <div><a href="https://designwave831.gumroad.com">Gumroad</a> · <a href="https://dev.to/fieldwork">Dev.to</a> · <a href="https://github.com/JZGaskin/fieldwork">GitHub</a></div>
-</footer>
+<h1>Tools for people who run things.</h1>
+<h2>Templates, checklists, and systems built from real operations experience. No theory. No fluff.</h2>
+
+<div class="section">Products</div>
+
+<div class="product">
+  <h3><a href="https://designwave831.gumroad.com/l/agency-sop-pack">Agency Operations SOP Pack</a></h3>
+  <p>7 templates for creative agencies. Creative briefs, revision tracking, retainer management, resource allocation, client escalation, weekly reviews.</p>
+  <div class="price">$29</div>
+</div>
+
+<div class="product">
+  <h3><a href="https://designwave831.gumroad.com/l/sop-template-pack">SOP Template Pack</a></h3>
+  <p>6 fillable templates + 2 bonuses. Daily ops, client onboarding, vendor management, issue resolution, weekly reviews, process improvement. Markdown + guides for Notion, Google Docs, PDF.</p>
+  <div class="price">$24</div>
+</div>
+
+<div class="product">
+  <h3><a href="https://designwave831.gumroad.com/l/gumroad-toolkit">Gumroad Launch Toolkit</a></h3>
+  <p>Listing templates, API integration guide (presign upload pipeline documented), cover image specs, tag optimization, pre-publish checklist.</p>
+  <div class="price">$9</div>
+</div>
+
+<div class="product">
+  <h3><a href="https://designwave831.gumroad.com/l/daily-ops-checklist">Daily Operations Checklist</a></h3>
+  <p>Morning and evening routines. Filled example from a real design studio. No email required. Actually free.</p>
+  <div class="price">Free</div>
+</div>
+
+<div class="section">Recent Writing</div>
+
+<div class="post">
+  <a href="/fieldwork/blog/the-best-free-sop-templates-in-2026-that-are-actually-useful">The best free SOP templates in 2026 (that are actually useful)</a>
+  <span class="label">— Buyer's Guide</span>
+</div>
+<div class="post">
+  <a href="/fieldwork/blog/i-automated-my-entire-workday-and-nobody-noticed-for-3-months">I automated my workday and nobody noticed for 3 months</a>
+  <span class="label">— Story</span>
+</div>
+<div class="post">
+  <a href="/fieldwork/blog/the-3-worst-client-onboarding-disasters-i-have-ever-witnessed">Three client onboarding disasters I've witnessed</a>
+  <span class="label">— Story</span>
+</div>
+<div class="post">
+  <a href="/fieldwork/blog/">All 9 articles →</a>
+</div>
+
+<div class="footer">
+  Fieldwork · Built by operators, not theorists ·
+  <a href="https://designwave831.gumroad.com">Gumroad</a> ·
+  <a href="https://dev.to/fieldwork">Dev.to</a> ·
+  <a href="https://github.com/JZGaskin/fieldwork">GitHub</a>
+</div>
+
 </body>
 </html>
